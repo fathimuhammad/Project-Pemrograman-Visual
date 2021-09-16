@@ -19,18 +19,4 @@ def addtoexcel(namabuku, penulis, penerbit, tahunterbit):
             wb.save(filename='D:\Kuliah\Semester 3\Pemrograman Visual\Project\database.xlsx')
             break
         x+=1
-def outofexcel(namabuku, penulis, penerbit, tahunterbit):
-    wb2 = load_workbook(filename='D:\Kuliah\Semester 3\Pemrograman Visual\Project\database.xlsx')
-    wb2.active
-    sheet = wb2['OutputBuku']
-    wb2.save(filename='D:\Kuliah\Semester 3\Pemrograman Visual\Project\database.xlsx')
-    y = 2
-    while True:
-        if sheet['A'+ str(y)].value == None:
-            sheet['A'+ str(y)].value = namabuku
-            sheet['B'+ str(y)].value = penulis
-            sheet['C'+ str(y)].value = penerbit
-            sheet['D'+ str(y)].value = tahunterbit
-            wb2.save(filename='D:\Kuliah\Semester 3\Pemrograman Visual\Project\database.xlsx')
-            break
-        y+=1
+ 
