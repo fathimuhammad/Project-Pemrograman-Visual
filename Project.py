@@ -35,3 +35,28 @@ def outofexcel(namabuku, penulis, penerbit, tahunterbit):
             wb2.save(filename='D:\Kuliah\Semester 3\Pemrograman Visual\Project\database.xlsx')
             break
         y+=1
+
+def start():    
+    root = tk.Tk()
+    root.title("Inventaris Buku")
+    tk.Label(root, text='Nama Buku').pack(side=tk.LEFT, padx=5, pady=5)
+    nama = tk.Entry(root)
+    nama.pack(side=tk.LEFT, padx=5, pady=5)
+    tk.Label(root, text='Penulis').pack(side=tk.LEFT, padx=5, pady=5)
+    penulis = tk.Entry(root)
+    penulis.pack(side=tk.LEFT, padx=5, pady=5)
+    tk.Label(root, text='Penerbit').pack(side=tk.LEFT, padx=5, pady=5)
+    penerbit = tk.Entry(root)
+    penerbit.pack(side=tk.LEFT, padx=5, pady=5)
+    tk.Label(root, text='Tahun Terbit').pack(side=tk.LEFT, padx=5, pady=5)
+    tahunterbit = tk.Entry(root)
+    tahunterbit.pack(side=tk.LEFT, padx=5, pady=5)
+    b1 = tk.Button(root, text='In', command=lambda:[(addtoexcel(nama.get(), penulis.get(), penerbit.get(), tahunterbit.get())), (print('Success'))])
+    b1.pack(side=tk.LEFT, padx=5, pady=5)
+    b2 = tk.Button(root, text='Out', command=lambda:[(outofexcel(nama.get(), penulis.get(), penerbit.get(), tahunterbit.get())), (print('Success'))])
+    b2.pack(side=tk.LEFT, padx=5, pady=5)
+    b3 = tk.Button(root, text='Quit', command=root.quit)
+    b3.pack(side=tk.LEFT, padx=5, pady=5)
+    root.mainloop()
+
+start()
